@@ -11,9 +11,9 @@ public class LogstachApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LogstachApplication.class, args);
-        FileLog fileLog = new FileLog();
+        LogStach fileLog = new FileLog();
         List<LogModel> logModels = listaLogModel();
-        logModels.forEach(fileLog::escrever);
+        logModels.forEach(fileLog::writer);
     }
 
     private static List<LogModel> listaLogModel() {
@@ -32,7 +32,7 @@ public class LogstachApplication {
             stringBuilder.append("} ");
             logs.put("log", Collections.singletonList(stringBuilder));
 
-            LogModel logModel = new LogModel("[TAG]", LogstachApplication.class.getName(), "[id] " + i, logs);
+            LogModel logModel = new LogModel("[VERISON] 1.0.1", "[TAG]", LogstachApplication.class.getName(), "[id] " + i, logs);
             listaLogModel.add(logModel);
         }
         return listaLogModel;
