@@ -37,4 +37,8 @@ public class LogstachApplication {
         }
         return listaLogModel;
     }
+
+
+
+//    public T get(Class _class) {return get(_class.getSimpleName() + "-" + System.nanoTime());}
 }
