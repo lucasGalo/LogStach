@@ -1,6 +1,5 @@
 package com.galo.logstach;
 
-import com.galo.logstach.file.FileLog;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,9 +10,8 @@ public class LogstachApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(LogstachApplication.class, args);
-        LogStach fileLog = new FileLog();
-        List<LogModel> logModels = listaLogModel();
-        logModels.forEach(fileLog::writer);
+
+        listaLogModel().forEach(LogProcess::process);
     }
 
     private static List<LogModel> listaLogModel() {
@@ -37,7 +35,6 @@ public class LogstachApplication {
         }
         return listaLogModel;
     }
-
 
 
 //    public T get(Class _class) {return get(_class.getSimpleName() + "-" + System.nanoTime());}
