@@ -11,7 +11,8 @@ public class LogstachApplication {
     public static void main(String[] args) {
         SpringApplication.run(LogstachApplication.class, args);
 
-        listaLogModel().forEach(LogProcess::process);
+        //listaLogModel().forEach(LogProcess::process);
+        listaLogModel().forEach(log -> LogProcess.process(log));
     }
 
     private static List<LogModel> listaLogModel() {

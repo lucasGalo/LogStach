@@ -10,6 +10,7 @@ import java.io.IOException;
 
 public class FileLog extends Log {
 
+    private static final String MAX_SIZE = "100";
     private static final String MMDDYYYY = "MM-dd-yyyy";
     private static final String DIRETORY_LOG = "logs";
 
