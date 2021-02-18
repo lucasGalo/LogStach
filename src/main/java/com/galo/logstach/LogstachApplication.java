@@ -13,12 +13,14 @@ public class LogstachApplication {
 
         //listaLogModel().forEach(LogProcess::process);
         listaLogModel().forEach(log -> LogProcess.process(log));
+
+        listaLogModel().forEach(log -> LogProcess.process(log));
     }
 
     private static List<LogModel> listaLogModel() {
 
         List<LogModel> listaLogModel = new ArrayList<>();
-        for (int i = 0; i < 10; i++) {
+        for (int i = 0; i < 1000000; i++) {
             Map<String, List<Object>> logs = new HashMap<>();
 
             StringBuilder stringBuilder = new StringBuilder();

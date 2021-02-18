@@ -7,6 +7,6 @@ public class MongoLog extends Log {
 
     @Override
     public void writer(LogModel logModel) {
-        System.out.println("Gravando no banco");
+        //System.out.println("Gravando no banco");
     }
 }

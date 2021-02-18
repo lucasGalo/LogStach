@@ -11,6 +11,21 @@ public class FileUtil {
             folder.mkdir();
     }
 
+    public void visualizarArquivos(String path) throws IOException {
+
+        File file = new File(path);
+        File afile[] = file.listFiles();
+        int i = 0;
+        for (int j = afile.length; i < j; i++) {
+            File arquivos = afile[i];
+        }
+    }
+
+    public static boolean isSizeMax(String path, Long max){
+        return new File(path).length() > max;
+    }
+
+
     public static boolean isExiste(String file) {
         try {
             boolean newArquivo = false;
