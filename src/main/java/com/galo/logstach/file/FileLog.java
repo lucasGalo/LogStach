@@ -3,7 +3,6 @@ package com.galo.logstach.file;
 import com.galo.logstach.Log;
 import com.galo.logstach.LogModel;
 import com.galo.logstach.util.DatasUtil;
-import static java.lang.System.out;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -45,7 +44,7 @@ public class FileLog extends Log {
         return nome;
     }
 
-    public  boolean isData(String pArquivo) {
+    public boolean isData(String pArquivo) {
         int dataAtual = Integer.parseInt(DatasUtil.dataAtual(DDMMYYYY).replace("-", ""));
         int dataArquivo = Integer.parseInt(dataArquivo(pArquivo));
         if (dataAtual > dataArquivo)
@@ -58,7 +57,6 @@ public class FileLog extends Log {
         int diminuir = tamUltimo - 38;
         return pArquivo.substring(tamUltimo - (diminuir + 17), tamUltimo - (diminuir + 9));
     }
-
 
     public String timeArquivo(String pArquivo) {
         int tamUltimo = pArquivo.length();
