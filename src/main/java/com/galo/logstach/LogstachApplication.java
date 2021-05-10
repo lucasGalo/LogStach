@@ -16,13 +16,10 @@ public class LogstachApplication {
 
         listaLogModel().forEach(log -> LogProcess.process(log));
     }
-
     private static List<LogModel> listaLogModel() {
 
         List<LogModel> listaLogModel = new ArrayList<>();
         for (int i = 0; i < 1000000; i++) {
-            Map<String, List<Object>> logs = new HashMap<>();
-
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.append(i + " REQUEST: ");
             stringBuilder.append(" {");
@@ -31,14 +28,10 @@ public class LogstachApplication {
             stringBuilder.append("\"sexo\": \"M\" \n ");
             stringBuilder.append("\"dataNascimento\": \"20-08-1990\" \n ");
             stringBuilder.append("} ");
-            logs.put("log", Collections.singletonList(stringBuilder));
-
-            LogModel logModel = new LogModel("[VERISON] 1.0.1", "[TAG]", LogstachApplication.class.getName(), "[id] " + i, logs);
-            listaLogModel.add(logModel);
+            listaLogModel.add(LogProcess.listaLogModel(stringBuilder.toString()));
         }
         return listaLogModel;
     }
-
 
 //    public T get(Class _class) {return get(_class.getSimpleName() + "-" + System.nanoTime());}
 }
